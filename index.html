@@ -10,6 +10,11 @@
       href="css/style.css" />
 
     <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/vs2015.min.css"
+    />
+   
+    <link
       rel="shortcut icon"
       href="assets/images/asterisk-svgrepo-com.svg"
       type="image/x-icon" />
@@ -56,7 +61,28 @@
       <!-- Aquí aparecerán las lecciones -->
     </section>
 
-    <!-- Script que carga y procesa Markdown -->
+
+    <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/highlight.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/languages/javascript.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/languages/html.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/languages/css.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/languages/bash.min.js"></script>
+
+    <!-- TU SCRIPT AL FINAL -->
     <script src="scripts/render.js"></script>
+
+          <script>
+      document.addEventListener("click", (e) => {
+        if (!e.target.classList.contains("copy-btn")) return;
+
+        const code = e.target.nextElementSibling.innerText;
+        navigator.clipboard.writeText(code);
+
+        e.target.innerText = "Copiado";
+        setTimeout(() => (e.target.innerText = "Copiar"), 1500);
+      });
+      </script>
+
   </body>
 </html>

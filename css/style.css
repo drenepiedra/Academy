@@ -41,12 +41,14 @@ nav a:hover {
 }
 
 pre {
-  background: #f4f4f4;
-  padding: 10px;
-  border-radius: 5px;
+  background: #1e1e1e;
+  padding: 1rem;
+  border-radius: 8px;
   overflow-x: auto;
-  font-family: "Fira Code", monospace;
+  font-size: 0.9rem;
 }
-code {
-  color: #d73a49; /* opcional */
+
+pre code {
+  font-family: 'Fira Code', monospace;
+  line-height: 1.6;
 }

@@ -6,6 +6,12 @@ async function loadMarkdown(file) {
     const response = await fetch(`lessons/${file}`);
     const text = await response.text();
     contentEl.innerHTML = marked.parse(text); // convierte MD a HTML
+
+    // 2. Highlight.js → resaltar bloques
+      contentEl.querySelectorAll("pre code").forEach((block) => {
+      hljs.highlightElement(block);
+    });
+
   } catch (error) {
     contentEl.innerHTML = "<p>No se pudo cargar la lección.</p>";
   }
